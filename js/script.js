@@ -14,3 +14,12 @@ close.addEventListener("click", function (evt) {
   evt.preventDefault();
   popup.classList.remove("modal-show");
 });
+
+$(document).ready(function(){
+  $('.slider').slick({
+      dots: true,
+      arrows: false,
+      draggable: false,
+      speed: 0,
+  });
+});
