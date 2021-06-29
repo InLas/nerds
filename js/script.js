@@ -1,25 +1,29 @@
-var link = document.querySelector(".write-us-button");
-var popup = document.querySelector(".modal");
-var close = popup.querySelector(".modal-close");
-var UserName = popup.querySelector("[name=user-name]");
+const link = document.querySelector('.write-us-button');
+const popup = document.querySelector('.modal');
+const popupClose = popup.querySelector('.modal-close');
+const userName = popup.querySelector('[name=user-name]');
 
-
-link.addEventListener("click", function (evt) {
+link.addEventListener('click', function (evt) {
   evt.preventDefault();
-  popup.classList.add("modal-show");
-  UserName.focus();
+  popup.classList.add('modal-show');
+  userName.focus();
 });
 
-close.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  popup.classList.remove("modal-show");
+popupClose.addEventListener('click', function () {
+  popup.classList.remove('modal-show');
 });
 
-$(document).ready(function(){
+window.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 27) {
+    popup.classList.remove('modal-show');
+  }
+});
+
+$(document).ready(function () {
   $('.slider').slick({
-      dots: true,
-      arrows: false,
-      draggable: false,
-      speed: 0,
+    dots: true,
+    arrows: false,
+    draggable: false,
+    speed: 0,
   });
 });
